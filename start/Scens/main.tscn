@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scens/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprite/Title map.png" type="Texture" id=2]
-[ext_resource path="res://Scens/KinematicBody2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scens/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scens/AngryMob.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Title map.png 0"
@@ -100,9 +101,15 @@ position = Vector2( 0, 344 )
 [node name="StaticBody2D" parent="Object/StaticBody2D" instance=ExtResource( 1 )]
 position = Vector2( 256, 0 )
 
+[node name="StaticBody2D" parent="Object/StaticBody2D/StaticBody2D" instance=ExtResource( 1 )]
+position = Vector2( 256, -255 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 format = 1
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 62, 282 )
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 45, 288 )
+
+[node name="AngryMob" parent="." instance=ExtResource( 4 )]
+position = Vector2( 576, 43 )

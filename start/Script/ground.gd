@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 
-
 func _ready():
 	randomize()
 	var gr = int(rand_range(1,5))

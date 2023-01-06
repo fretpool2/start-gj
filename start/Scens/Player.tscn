@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Script/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scens/KinematicBody2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scens/Camera2D.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[node name="Player" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Camera2D" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 6, 3 )
